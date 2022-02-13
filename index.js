@@ -76,10 +76,10 @@ const promptNewEmployee = () => {
             },
             {
                 type: 'input',
-                name: 'position',
-                message: "What is your employee's position?",
-                validate: name => {
-                    if (!name) {
+                name: 'role_id',
+                message: "What is your employee's role id?",
+                validate: roleId => {
+                    if (!roleId) {
                         console.log("Please enter a valid name")
                         return false
                     } else return true
@@ -87,38 +87,24 @@ const promptNewEmployee = () => {
             },
             {
                 type: 'input',
-                name: 'department',
-                message: "What is your employee's department?",
-                validate: name => {
-                    if (!name) {
-                        console.log("Please enter a valid name")
-                        return false
-                    } else return true
-                }
-            },
-            {
-                type: 'input',
-                name: 'salary',
-                message: "What is your employee's salary?",
-                validate: name => {
-                    if (!name) {
-                        console.log("Please enter a valid name")
+                name: 'manager_id',
+                message: "What is your employee's manager ID?",
+                validate: managerId => {
+                    if (!managerId) {
+                        console.log("Plaese enter a valid name")
                         return false
                     } else return true
                 }
             }
         ])
-        .then(answers => databaseOps.addEmployee(
-            db,
-            [
+        .then(answers => {databaseOps.addEmployee(
                 answers.first_name,
                 answers.last_name,
-                answers.position,
-                answers.department,
-                parseInt(answers.salary)
-            ]
-        ))
-    optionMenu()
+                answers.role_id,
+                answers.manager_id,
+        )
+        optionMenu()
+    })
 }
 
 const promptDepartment = () => {
@@ -184,16 +170,16 @@ const promptRole = () => {
 }
 
 const promptUpdateEmployee = () => {
-    const employeeNames = []
+    const employeeIds = []
     databaseOps.getEmployeeData()
         .then(employeeData => {
-            employeeData[0].map(employee => employeeNames.push(employee.first_name))
-            console.log(employeeNames)
+            employeeData[0].map(employee => employeeIds.push(employee.id))
+            console.table(employeeData[0])
             inquirer.prompt([{
                         type: 'list',
-                        name: 'employee',
+                        name: 'id',
                         message: "Which employee would you like to update?",
-                        choices: [...employeeNames]
+                        choices: [...employeeIds]
                     },
                     {
                         type: 'list',
@@ -204,9 +190,8 @@ const promptUpdateEmployee = () => {
                 ])
                 .then(answers => {
                     const employee = employeeData[0].find(({
-                        first_name
-                    }) => first_name === answers.employee)
-                    console.log(employee)
+                        id
+                    }) => id === answers.id)
                     switch (answers.property) {
                         case 'First Name':
                             inquirer.prompt([{
@@ -225,6 +210,7 @@ const promptUpdateEmployee = () => {
                                     databaseOps.updateEmployeeFirstName(input.firstName, employee.id)
                                     optionMenu()
                                 })
+                                break;
                         case 'Last Name':
                             inquirer.prompt([{
                                     type: 'input',
@@ -242,6 +228,7 @@ const promptUpdateEmployee = () => {
                                     databaseOps.updateEmployeeLastName(input.lastName, employee.id)
                                     optionMenu()
                                 })
+                                break;
                         case 'Role ID':
                             inquirer.prompt([{
                                     type: 'input',
@@ -259,6 +246,7 @@ const promptUpdateEmployee = () => {
                                     databaseOps.updateEmployeeRoleId(input.roleId, employee.id)
                                     optionMenu()
                                 })
+                                break;
                         case 'Manager ID':
                             inquirer.prompt([{
                                     type: 'input',
@@ -276,6 +264,7 @@ const promptUpdateEmployee = () => {
                                     databaseOps.updateEmployeeManagerId(input.managerId, employee.id)
                                     optionMenu()
                                 })
+                                break;
                     }
                 })
         })
