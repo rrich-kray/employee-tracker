@@ -1,5 +1,6 @@
 const inquirer = require('inquirer')
 const db = require('./db/connection')
+const { viewEmployeesByManager } = require('./utils/database')
 const databaseOps = require('./utils/database')
 
 // TODO: add optionMenu() call after each choice that doesn't interfere with user action
@@ -9,7 +10,7 @@ const optionMenu = () => {
             type: 'list',
             name: 'options',
             message: 'Please select an action',
-            choices: ['View All Departments', 'View All Roles', 'View All Employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Employee']
+            choices: ['View All Departments', 'View All Roles', 'View All Employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Employee', 'View Employees by Manager']
         }])
         .then(answer => {
             switch (answer.options) {
@@ -45,6 +46,9 @@ const optionMenu = () => {
                     break;
                 case 'Update an Employee':
                     promptUpdateEmployee();
+                    break;
+                case 'View Employees by Manager':
+                    promptViewEmployeesByManager();
                     break;
             }
         })
@@ -269,5 +273,31 @@ const promptUpdateEmployee = () => {
                 })
         })
 }
+
+const promptViewEmployeesByManager = () => {
+    databaseOps.getManagers()
+    .then(managers => {
+        const managerIds = []
+        managers[0].map(manager => managerIds.push(manager.id))
+        console.table(managers[0])
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'manager',
+                message: 'Please select a manager by ID',
+                choices: [...managerIds],
+            }
+        ])
+        .then(managerId => {
+            databaseOps.viewEmployeesByManager(managerId.manager)
+            .then(employeesByManager => {
+                console.log(employeesByManager[0])
+                console.table(employeesByManager[0])
+                optionMenu()
+            })
+        })
+    })
+}
+
 
 optionMenu()

@@ -78,6 +78,20 @@ class DatabaseOps {
         const params = [managerId, id]
         return this.db.query(sql, params)
     }
+
+    getManagers = () => {
+        const sql = `SELECT * FROM employee WHERE manager_id IS NULL`
+        return this.db.query(sql)
+    }
+
+    viewEmployeesByManager = (id) => {
+        const sql = `SELECT *
+                     FROM employee
+                     WHERE employee.manager_id = ?;
+                      `
+        const params = [id]
+        return this.db.query(sql, params)
+    }
 }
 
 
