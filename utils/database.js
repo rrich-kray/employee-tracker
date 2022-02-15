@@ -12,14 +12,16 @@ class DatabaseOps {
         return this.db.query(sql)
     }
     
-    getAllEmployees = () => {
-        const sql = `SELECT * 
-                     FROM employee
-                     LEFT JOIN role ON employee.role_id = role.id
-                     LEFT JOIN department ON role.department_id = department.id
-                     LEFT JOIN employee manager ON manager.manager_id = employee.id;
-                      `
+    getAllEmployees = () => { // priority of the * was the problem
+        const sql = `SELECT * FROM employee
+                     LEFT JOIN role ON employee.role_id = role.role_id
+                     LEFT JOIN department ON role.department_id = department.department_id;`
+                     
         return this.db.query(sql)
+    }
+
+    getEmployeeTable = () => {
+        return this.db.query(`SELECT * FROM employee`)
     }
     
     getAllRoles = () => {
@@ -28,6 +30,10 @@ class DatabaseOps {
                      LEFT JOIN department ON role.department_id = department.id
                     `
         return this.db.query(sql)
+    }
+
+    getRoleNames = () => {
+        return this.db.query(`SELECT * FROM role`)
     }
     
     addEmployee = (firstName, lastName, roleId, managerId ) => {
@@ -90,6 +96,36 @@ class DatabaseOps {
                      WHERE employee.manager_id = ?;
                       `
         const params = [id]
+        return this.db.query(sql, params)
+    }
+
+    deleteRole = (id) => {
+        const sql = `
+            DELETE FROM role
+            WHERE id = ?
+        `
+        const params = [id]
+
+        return this.db.query(sql, params)
+    }
+
+    deleteDepartment = (id) => {
+        const sql = `
+            DELETE FROM department
+            WHERE department_id = ?
+        `
+        const params = [id]
+
+        return this.db.query(sql, params)
+    }
+
+    deleteEmployee = (id) => {
+        const sql = `
+            DELETE FROM employee
+            WHERE id = ?
+        `
+        const params = [id]
+
         return this.db.query(sql, params)
     }
 }

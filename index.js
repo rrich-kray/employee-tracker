@@ -10,7 +10,7 @@ const optionMenu = () => {
             type: 'list',
             name: 'options',
             message: 'Please select an action',
-            choices: ['View All Departments', 'View All Roles', 'View All Employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Employee', 'View Employees by Manager']
+            choices: ['View All Departments', 'View All Roles', 'View All Employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Employee', 'View Employees by Manager', 'Delete a Role', 'Delete a Department', 'Delete an Employee']
         }])
         .then(answer => {
             switch (answer.options) {
@@ -22,14 +22,14 @@ const optionMenu = () => {
                         })
                     break;
                 case 'View All Roles':
-                    databaseOps.getAllRoles(db)
+                    databaseOps.getAllRoles()
                         .then(data => {
                             console.table(data[0])
                             optionMenu()
                         })
                     break;
                 case 'View All Employees':
-                    databaseOps.getAllEmployees(db)
+                    databaseOps.getAllEmployees()
                         .then(data => {
                             console.table(data[0])
                             optionMenu()
@@ -49,6 +49,15 @@ const optionMenu = () => {
                     break;
                 case 'View Employees by Manager':
                     promptViewEmployeesByManager();
+                    break;
+                case 'Delete a Role':
+                    promptDeleteRole();
+                    break;
+                case 'Delete a Department':
+                    promptDeleteDepartment();
+                    break;
+                case 'Delete an Employee':
+                    promptDeleteEmployee();
                     break;
             }
         })
@@ -298,6 +307,72 @@ const promptViewEmployeesByManager = () => {
         })
     })
 }
+
+const promptDeleteRole = () => {
+    databaseOps.getRoleNames()
+    .then(roles => {
+        const roleIds = []
+        roles[0].map(role => roleIds.push(role.id))
+        console.table(roles[0])
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'role',
+                message: 'Please select a role for deletion',
+                choices: [...roleIds]
+            }
+        ])
+        .then(roleSelection => {
+            databaseOps.deleteRole(roleSelection.role)
+            optionMenu()
+        })
+    })
+}
+
+const promptDeleteDepartment = () => {
+    databaseOps.getAllDepartments()
+    .then(departments => {
+        const departmentIds = []
+        departments[0].map(department => departmentIds.push(department.department_id))
+        console.table(departments[0])
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'role',
+                message: 'Please select a role for deletion',
+                choices: [...departmentIds]
+            }
+        ])
+        .then(departmentSelection => {
+            console.log(departmentSelection)
+            databaseOps.deleteDepartment(departmentSelection.role)
+            optionMenu()
+        })
+    })
+}
+
+const promptDeleteEmployee = () => {
+    databaseOps.getAllEmployees()
+    .then(employees => {
+        console.log(employees[0])
+        const employeeIds = []
+        employees[0].map(employee => employeeIds.push(employee.id))
+        console.table(employees[0])
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'role',
+                message: 'Please select a role for deletion',
+                choices: [...employeeIds]
+            }
+        ])
+        .then(employeeSelection => {
+            databaseOps.deleteEmployee(employeeSelection.id)
+            optionMenu()
+        })
+    })
+}
+   
 
 
 optionMenu()
