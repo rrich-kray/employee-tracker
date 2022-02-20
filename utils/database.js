@@ -102,7 +102,7 @@ class DatabaseOps {
     deleteRole = (id) => {
         const sql = `
             DELETE FROM role
-            WHERE id = ?
+            WHERE role_id = ?
         `
         const params = [id]
 

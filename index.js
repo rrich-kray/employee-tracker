@@ -312,7 +312,7 @@ const promptDeleteRole = () => {
     databaseOps.getRoleNames()
     .then(roles => {
         const roleIds = []
-        roles[0].map(role => roleIds.push(role.id))
+        roles[0].map(role => roleIds.push(role.role_id))
         console.table(roles[0])
         inquirer.prompt([
             {
@@ -354,7 +354,6 @@ const promptDeleteDepartment = () => {
 const promptDeleteEmployee = () => {
     databaseOps.getAllEmployees()
     .then(employees => {
-        console.log(employees[0])
         const employeeIds = []
         employees[0].map(employee => employeeIds.push(employee.id))
         console.table(employees[0])
@@ -367,7 +366,9 @@ const promptDeleteEmployee = () => {
             }
         ])
         .then(employeeSelection => {
-            databaseOps.deleteEmployee(employeeSelection.id)
+            console.log(employeeSelection)
+            console.log(employeeSelection.role)
+            databaseOps.deleteEmployee(employeeSelection.role)
             optionMenu()
         })
     })
