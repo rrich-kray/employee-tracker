@@ -248,7 +248,7 @@ const promptUpdateEmployee = () => {
                                     name: 'roleId',
                                     message: "Please enter your employee's new role ID",
                                     validate: answer => {
-                                        if (!answer || typeof answer !== 'number') {
+                                        if (!answer) {
                                             console.log('Please enter a valid role ID')
                                             return false
                                         }
@@ -256,6 +256,8 @@ const promptUpdateEmployee = () => {
                                     }
                                 }])
                                 .then(input => {
+                                    console.log(input.roleId)
+                                    console.log(employee.id)
                                     databaseOps.updateEmployeeRoleId(input.roleId, employee.id)
                                     optionMenu()
                                 })
@@ -266,7 +268,7 @@ const promptUpdateEmployee = () => {
                                     name: 'managerId',
                                     message: "Please enter your employee's new manager ID",
                                     validate: answer => {
-                                        if (!answer || typeof answer !== 'number') {
+                                        if (!answer) {
                                             console.log('Please enter a valid manager ID')
                                             return false
                                         }
@@ -344,7 +346,6 @@ const promptDeleteDepartment = () => {
             }
         ])
         .then(departmentSelection => {
-            console.log(departmentSelection)
             databaseOps.deleteDepartment(departmentSelection.role)
             optionMenu()
         })
