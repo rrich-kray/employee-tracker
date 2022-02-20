@@ -27,7 +27,7 @@ class DatabaseOps {
     getAllRoles = () => {
         const sql = `SELECT * 
                      FROM role
-                     LEFT JOIN department ON role.department_id = department.id
+                     LEFT JOIN department ON role.department_id = department.department_id
                     `
         return this.db.query(sql)
     }
