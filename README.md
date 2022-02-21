@@ -10,13 +10,11 @@ Employee tracker is a node.js application that allows you to store, view, update
 
 ## Table of Contents
 
-[title](#title)
-[description](#description)
-[installation](#installation)
-[usage](#usage)
-[contributing](#contributing)
-[email](#email)
-[github](#github)
+[title](#title)/n
+[description](#description)/n
+[installation](#installation)/n
+[usage](#usage)/n
+[contributing](#contributing)/n
 
 
 ## Installation
