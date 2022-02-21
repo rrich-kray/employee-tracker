@@ -45,6 +45,12 @@ The process for updating employee, department or role information is similar. Us
 
 Finally, users can choose to remove any employee, department or role by selecting the appropriate ID when prompted. All functionality heretofor described are executed using SQL queries.
 
+## Demonstration Video
+
+Please find the link to the demonstration video below:
+
+https://drive.google.com/file/d/13BPb2DhXy1QZuF3k0BtTz8EG0fhQwskz/view
+
 ## Contributing
 
 Feel free to leave suggestions in the Slack channel.
