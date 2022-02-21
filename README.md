@@ -27,7 +27,7 @@ https://nodejs.dev/learn/how-to-install-nodejs
 
 ## Usage 
 
-Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data. Start the application by running the index.js file in a bash terminal. The user will be prompted to choose an action.
+Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data. Start the application by running the index.js file in a bash terminal. The user will be prompted to choose one of the following actions:
 
 ![employee tracker main menu](./assets/images/screen1.png)
 
