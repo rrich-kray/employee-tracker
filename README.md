@@ -65,6 +65,6 @@ Feel free to shoot me any questions at the email below:
 
 rrich.kray@gmail.com
 
-find my GitHub profile by following the link below:
+You can also find my GitHub profile by following the link below:
 
 https://github.com/rrich-kray/
