@@ -1,10 +1,10 @@
 
     
-# Express Note Taker
+# Employee Tracker
 
 ## Description
 
-![employee tracker](./assets/images/screen7.png)
+![employee tracker](./assets/images/screen6.png)
 
 Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data.
 
