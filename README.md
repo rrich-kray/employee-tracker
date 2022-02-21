@@ -33,16 +33,9 @@ Employee tracker is a node.js application that allows you to store, view, update
 
 ### Viewing employees, departments and roles
 
-The user can choose to view all departments, view all employees, view all roles, add a role, add an employee, update an employee, view employees by manager, delete a role, delete a department, or delete an employee.
-
-Choosing to view all employees will display the following menu:
+The user can choose to view all employees, departments, or roles. Choosing each will display the following menus, respectively:
 
 ![employee tracker view all employees](./assets/images/screen2.png)
-
-Similarly, selecting 'view all departments' or 'view all roles' will display the following menus, respectively:
-
-![employee tracker view all departments](./assets/images/screen3.png)
-![employee tracker view all roles](./assets/images/screen4.png)
 
 ### Adding and updating employees, departments and roles
 
@@ -56,7 +49,7 @@ The process for updating employee, department or role information is similar. Us
 
 ### Deleting employees, departments or roles
 
-Finally, users can choose to remove any employee, department or role by selecting the option in the main menu of the application.  
+Finally, users can choose to remove any employee, department or role by selecting the appropriate ID when prompted.  
 
 ## Contributing
 
