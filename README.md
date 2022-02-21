@@ -4,7 +4,7 @@
 
 ## Description
 
-![employee tracker](./assets/images/screen11.png)
+![employee tracker](./assets/images/screen2.png)
 
 Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data.
 
