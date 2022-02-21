@@ -4,7 +4,7 @@
 
 ## Description
 
-![employee tracker]()
+![employee tracker](employee-tracker\assets\images\screen6.png)
 
 Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data.
 
@@ -27,11 +27,11 @@ https://nodejs.dev/learn/how-to-install-nodejs
 
 ## Usage 
 
-![employee tracker](employee-tracker\assets\images\screen6.png)
-
 Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data. Start the application by running the index.js file in a bash terminal. The user will be prompted to choose an action.
 
 ![employee tracker main menu](employee-tracker\assets\images\screen1.png)
+
+### Viewing employees, departments and roles
 
 The user can choose to view all departments, view all employees, view all roles, add a role, add an employee, update an employee, view employees by manager, delete a role, delete a department, or delete an employee.
 
@@ -42,15 +42,25 @@ Choosing to view all employees will display the following menu:
 Similarly, selecting 'view all departments' or 'view all roles' will display the following menus, respectively:
 
 ![employee tracker view all departments](employee-tracker\assets\images\screen3.png)
-![employee tracker employee tracker view all roles](employee-tracker\assets\images\screen4.png)
+![employee tracker view all roles](employee-tracker\assets\images\screen4.png)
 
-When choosing to update an employee, the user will first be prompted to select which employee they desire to update, after which the user must also select which employee attribute to update.
+### Adding and updating employees, departments and roles
 
-![employee tracker main menu](employee-tracker\assets\images\screen7.png)
+Users can also choose to add an employee, department or role. Selecting this option will require the user to input data for each column contained in the relevant tables.
+
+![employee tracker view all roles](employee-tracker\assets\images\screen8.png)
+![employee tracker view all roles](employee-tracker\assets\images\screen9.png)
+![employee tracker view all roles](employee-tracker\assets\images\screen10.png)
+
+The process for updating employee, department or role information is similar. Users will select the desired option and answer the prompts that follow.
+
+### Deleting employees, departments or roles
+
+Finally, users can choose to remove any employee, department or role by selecting the option in the main menu of the application.  
 
 ## Contributing
 
-Feel free to fork or leave suggestions in the Slack channel.
+Feel free to leave suggestions in the Slack channel.
 
 ## Questions
 
