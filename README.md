@@ -29,7 +29,7 @@ https://nodejs.dev/learn/how-to-install-nodejs
 
 Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data. All data is stored within an SQL database; tables therein adhere to the following schema:
 
-![employee tracker main menu](./assets/images/screen11.png)
+![employee tracker main menu](./assets/images/screen2.png)
 
 Start the application by running the index.js file in a bash terminal. The user will be prompted to choose one of the following actions:
 
