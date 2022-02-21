@@ -43,7 +43,7 @@ Users can also add an employee, department or role. Selecting any of these optio
 
 The process for updating employee, department or role information is similar. Users will select the desired option and answer the prompts that follow.
 
-Finally, users can choose to remove any employee, department or role by selecting the appropriate ID when prompted. All functions heretofor described utilize SQL queries to execute the desired action.
+Finally, users can choose to remove any employee, department or role by selecting the appropriate ID when prompted. All functionality heretofor described utilize SQL queries to execute the desired action.
 
 ## Contributing
 
