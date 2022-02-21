@@ -1,7 +1,5 @@
 const db = require('../db/connection')
 
-// TODO: write join queries where needed, write functions to update each proprty
-
 class DatabaseOps {
     constructor(db) {
         this.db = db

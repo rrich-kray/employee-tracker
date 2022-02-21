@@ -110,14 +110,11 @@ const promptNewEmployee = () => {
                 }
             }
         ])
-        .then(answers => {databaseOps.addEmployee(
-                answers.first_name,
-                answers.last_name,
-                answers.role_id,
-                answers.manager_id,
-        )
-        optionMenu()
-    })
+        .then(answers => {
+            console.log(answers)
+            databaseOps.addEmployee(answers.first_name, answers.last_name, answers.role_id, answers.manager_id)
+            optionMenu()
+        })
 }
 
 const promptDepartment = () => {
