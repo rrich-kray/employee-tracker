@@ -6,7 +6,7 @@
 
 Employee tracker is an application that allows you to store, view, update and delete employee, department and role data. This application uses Node.js to record user input and stores it in a MySQL database. This project served as a great way to familiarize myself with not only the inquirer module but also the concept of relational databases with MySQL.
 
-This application queries the MySQL databse using the mysql2 Node package.
+This application queries the MySQL database using the mysql2 Node package.
 
 In the future, I plan to refactor several areas of the codebase and implement a feature that allows users to view the total utilized budget of all employees in the database.
 
