@@ -8,7 +8,7 @@ Employee tracker is an application that allows you to store, view, update and de
 
 This application queries the MySQL databse using the mysql2 Node package.
 
-In the future, I plan to refactor some areas of the codebase and implement a feature that allows users to view the total utilized budget of all employees in the database.
+In the future, I plan to refactor several areas of the codebase and implement a feature that allows users to view the total utilized budget of all employees in the database.
 
 ## Table of Contents
 
