@@ -130,7 +130,3 @@ class DatabaseOps {
 }
 
 module.exports = new DatabaseOps(db);
-
-// dont need express
-
-// Encapsulate all of this in a class and you can export the class

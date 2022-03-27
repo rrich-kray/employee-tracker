@@ -3,8 +3,6 @@ const db = require("./db/connection");
 const { viewEmployeesByManager } = require("./utils/database");
 const databaseOps = require("./utils/database");
 
-// TODO: add optionMenu() call after each choice that doesn't interfere with user action
-
 const optionMenu = () => {
   inquirer
     .prompt([
