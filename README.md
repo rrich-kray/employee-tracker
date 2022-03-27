@@ -48,13 +48,19 @@ Users can also add an employee, department or role. Selecting any of these optio
 
 The process for updating employee, department or role information is similar. Users will select the desired option and answer the prompts that follow.
 
-Finally, users can choose to remove any employee, department or role by selecting the appropriate ID when prompted. All functionality heretofor described is executed using SQL queries.
+Finally, users can choose to remove any employee, department or role by selecting the appropriate ID when prompted.
 
 ## Demonstration Video
 
 Please find the link to the demonstration video below:
 
 https://drive.google.com/file/d/13BPb2DhXy1QZuF3k0BtTz8EG0fhQwskz/view
+
+## Utilizes:
+
+- JavaScript
+- Node.js, including Inquirer and mysql2 modules
+- MySQL
 
 ## Contributing
 
