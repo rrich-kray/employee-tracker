@@ -12,16 +12,11 @@ In the future, I plan to refactor several areas of the codebase and implement a 
 
 ## Table of Contents
 
-[title](#title)
-
-[description](#description)
-
-[installation](#installation)
-
-[usage](#usage)
-
-[contributing](#contributing)
-
+[title](#title)  
+[description](#description)  
+[installation](#installation)  
+[usage](#usage)  
+[contributing](#contributing)  
 [questions](#questions)
 
 ## Installation
