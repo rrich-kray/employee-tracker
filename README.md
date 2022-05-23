@@ -10,11 +10,11 @@ Employee Tracker provides users a means to store, view, update and delete employ
 
 ## Table of Contents
 
-[Title](#title)  
 [Description](#description)  
 [Installation](#installation)  
 [How It Works](#how-it-works)  
-[Contributing](#contributing)  
+[Usage](#usage)  
+[Contact](#contact)  
 [Questions](#questions)
 
 ## Installation
@@ -25,11 +25,7 @@ https://nodejs.dev/learn/how-to-install-nodejs
 
 ## How It Works
 
-Employee Tracker
-
-Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data. All data is stored within an SQL database; tables therein adhere to the following schema:
-
-![employee tracker main menu](./assets/images/screen11.png)
+The application utilizes a SQL relational database to store data and the MySQL2 package to perform SQL queries. in lieu of a frontend, the inquirer package is used to accept user input.
 
 Start the application by running the index.js file in a bash terminal. The user will be prompted to choose one of the following actions:
 
@@ -45,31 +41,17 @@ The process for updating employee, department or role information is similar. Us
 
 Finally, users can choose to remove any employee, department or role by selecting the appropriate ID when prompted.
 
-## Demonstration Video
+## Usage
 
-Please find the link to the demonstration video below:
+Usage is demonstrated in the following video:
 
 https://drive.google.com/file/d/13BPb2DhXy1QZuF3k0BtTz8EG0fhQwskz/view
 
-## Utilizes:
+## Contact
 
-- JavaScript
-- Node.js, including Inquirer and mysql2 modules
-- MySQL
+Email: rrich.kray.93@gmail.com
 
-## Contributing
-
-Feel free to leave suggestions in the Slack channel.
-
-## Questions
-
-Feel free to shoot me any questions at the email below:
-
-rrich.kray@gmail.com
-
-You can also find my GitHub profile by following the link below:
-
-https://github.com/rrich-kray/
+GitHub: https://github.com/rrich-kray/
 
 ## License
 
