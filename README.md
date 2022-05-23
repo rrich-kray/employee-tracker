@@ -1,31 +1,31 @@
 # Employee Tracker
 
+This repository contains the source code for my Employee Tracker project.
+
 ## Description
 
 ![employee tracker](./assets/images/screen2.png)
 
-Employee tracker is an application that allows you to store, view, update and delete employee, department and role data. This application uses Node.js to record user input and stores it in a MySQL database. This project served as a great way to familiarize myself with not only the inquirer module but also the concept of relational databases with MySQL.
-
-This application queries the MySQL database using the mysql2 Node package.
-
-In the future, I plan to refactor several areas of the codebase and implement a feature that allows users to view the total utilized budget of all employees in the database.
+Employee Tracker provides users a means to store, view, update and delete employee, department and role data. While challenging, this was a great opportunity to work with a relational database and its API without the need for any front-end integration. That said, I do intend to integrate this application into a React-built front-end and deploy it in the near future.
 
 ## Table of Contents
 
-[title](#title)  
-[description](#description)  
-[installation](#installation)  
-[usage](#usage)  
-[contributing](#contributing)  
-[questions](#questions)
+[Title](#title)  
+[Description](#description)  
+[Installation](#installation)  
+[How It Works](#how-it-works)  
+[Contributing](#contributing)  
+[Questions](#questions)
 
 ## Installation
 
-Employee Tracker requires node.js to be installed. For instructions on how to do so, refer to the documentation:
+This application requires Node.js. Installation instructions can be found in the link below.
 
 https://nodejs.dev/learn/how-to-install-nodejs
 
-## Usage
+## How It Works
+
+Employee Tracker
 
 Employee tracker is a node.js application that allows you to store, view, update and delete employee, department and role data. All data is stored within an SQL database; tables therein adhere to the following schema:
 
